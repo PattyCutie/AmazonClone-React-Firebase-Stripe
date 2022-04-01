@@ -3,10 +3,10 @@ import "./Product.css";
 import { useStateValue } from "./StateProvider";
 
 function Product({ id, title, image, price, rating }) {
-
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
-  //console.log("this is the basket >>>", basket)
 
+  //console.log("this is the basket >>>", basket)
   const addToBasket = () => {
     //dispatch the item into the data layers
     dispatch({
@@ -20,6 +20,7 @@ function Product({ id, title, image, price, rating }) {
       },
     });
   };
+
   return (
     <div className="product">
       <div className="product__info">
@@ -36,10 +37,10 @@ function Product({ id, title, image, price, rating }) {
             ))}
         </div>
       </div>
+
       <img src={image} alt="" />
-      <button onClick={addToBasket}>
-        Add to Basket
-      </button>
+
+      <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );
 }

@@ -5,22 +5,22 @@ import { auth } from "./firebase";
 
 function Login() {
   const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const signIn = e => {
-    e.preventDefault();
+  const signIn = event => {
+    event.preventDefault();
     // with Firebase login....
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth => {
-        history.push('/')
+        history.push("/")
       }))
       .catch(error => alert(error.message))
   }
 
-  const register = e => {
-    e.preventDefault();
+  const register = event => {
+    event.preventDefault();
     // Firebase register....
 
     auth
@@ -29,8 +29,9 @@ function Login() {
         //it successfully created
         console.log(auth)
         if (auth) {
-          history.push('/')
-      }
+          history.push("/")
+        }
+        
       })
       .cathch(error => alert(error.message))
   }
@@ -54,8 +55,8 @@ function Login() {
               setEmail(e.target.value)} />
           <h5>Password</h5>
           <input type="password" value={password}
-            onChange={e =>
-              setPassword(e.target.value)} />
+            onChange={event =>
+              setPassword(event.target.value)} />
           
           <button onClick={signIn}
             type="submit" className="login__signInButton">

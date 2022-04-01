@@ -16,3 +16,6 @@
     padding: 10px;
     border-bottom: 2px solid lightgray;
 }
+.checkout__greeting > h3 > a {
+    text-decoration: none;
+}

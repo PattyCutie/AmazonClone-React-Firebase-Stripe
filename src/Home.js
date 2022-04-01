@@ -13,14 +13,15 @@ function  Home() {
         />
 
         <div className="home__row">
-          <Product
+          <Product            
             id="001"
             title="The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses Audible Logo Audible Audiobook"
             price={29.59}
             image="https://m.media-amazon.com/images/I/51PAIR77wJL.jpg"
-            rating={5}
+            rating={3}
           />
-          <Product
+
+          <Product            
             id="002"
             title="Targeal Wireless Gaming Headset with Microphone - For PS5, PS4, PC, Laptop, Mac"
             price={55.55}
@@ -35,26 +36,26 @@ function  Home() {
             title="Security Camera 2K, blurams Baby Monitor Dog Camera 360-degree for Home Security"
             price={89.99}
             image="https://m.media-amazon.com/images/I/514Q-oBHk7L._AC_SX425_.jpg"
-            rating={4}
+            rating={5}
           />
-          <Product
+          <Product           
             id="004"
             title="Floerns Women's Ditsy Floral Plunge Neck Knot Front A Line Short Dress"
             price={19.99}
             image="https://m.media-amazon.com/images/I/81dtN6hrX1L._AC_UY445_.jpg"
-            rating={3}
+            rating={2}
           />
-          <Product
+          <Product            
             id="005"
             title="Stone Lain Allison Stoneware Dish Set"
             price={45.25}
             image="https://m.media-amazon.com/images/I/71ELLy2+u3L._AC_SX679_.jpg"
-            rating={5}
+            rating={1}
           />
         </div>
 
         <div className="home__row">
-          <Product
+          <Product            
             id="006"
             title="M3 Naturals Arabica Coffee Body Scrub with Collagen & Stem Cell"
             price={15.59}

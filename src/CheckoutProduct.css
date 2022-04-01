@@ -1,5 +1,5 @@
 .checkoutProduct {
-    display: flex;
+     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -10,6 +10,7 @@
 }
 .checkoutProduct__info {
     padding-left: 20px;
+    margin-left: 20px;
 }
 
 .checkoutProduct__title {
