@@ -17,11 +17,12 @@ function Payment() {
   const elements = useElements();
 
   const [succeeded, setSucceeded] = useState(false);
-  const [processing, setProcessing] = useState();
+  const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
 
+  
   useEffect(() => {
     // Generating the special stripe secret which allows us to charge a customer
     const getClientSecret = async () => {
@@ -54,13 +55,12 @@ function Payment() {
         payment_method: {
           card: elements.getElement(CardElement),
         },
-      })
-      .then(({ paymentIntent }) => {
+      }).then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
         // if the processes are correct** it will be ...
 
         // connected firebase database and create data on clound firebase//
-        db.collection("user")
+        db.collection("users")
           .doc(user?.uid)
           .collection("orders")
           .doc(paymentIntent.id)
@@ -76,14 +76,14 @@ function Payment() {
 
         //after payment*
         dispatch({
-          type: "EMPTY_BASKET",
+          type: "EMPTY_BASKET"
         });
 
         history.replace("/orders");
       });
   };
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     //Listen or change in the CardElement
     //and display any error as the customer types their card details
     setDisabled(event.empty);
@@ -136,13 +136,13 @@ function Payment() {
             <form onSubmit={handleSubmit}>
               <h5>
                 Please enter 4242 4242 4242 4242 04/24 242 42424 to your card
-                details THIS IS FOR TESTING **
+                details FOR TESTING **
               </h5>
               <CardElement onChange={handleChange} />
               <div className="payment__priceContainer">
                 <CurrencyFormat
                   renderText={(value) => (
-                    <h3 className="order__total">Oder Total: {value}</h3>
+                    <h3 className="order__total">Order Total: {value}</h3>
                   )}
                   decimalScale={2}
                   value={getBasketTotal(basket)}
@@ -154,6 +154,7 @@ function Payment() {
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
+              
               {/* If any errors */}
               {error && <div>{error}</div>}
             </form>
@@ -161,7 +162,7 @@ function Payment() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Payment;
+export default Payment

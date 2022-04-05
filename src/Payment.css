@@ -30,3 +30,18 @@
     flex: 0.8;
 }
 
+.payment__details > h3 {
+    max-width: 400px;
+}
+
+.payment__details > form > div > button {
+    background: #f0c14b;
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    border: 1px solid;
+    font-weight: bolder;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+}
